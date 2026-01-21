@@ -1,0 +1,91 @@
+-- Configuration Variables
+set the_radio_show_name to "Program Name" -- The name of the show
+set the_radio_show_length to 1 -- in hours
+set the_padding to 5 -- in seconds; allows for a few extra seconds of recording time
+set target_playlist to "Recorded Shows" -- The playlist to add the final track to
+set main_library to "Library" -- The main music library playlist name
+set music_path to ((path to "cusr" as string) & "Music:") -- Base path for music files
+set WireTaps_save_location to (music_path & "WireTap Recordings:") -- Set this to WireTap’s save location in WireTap Prefs
+set WireTaps_prefix to "show" -- Set this to WireTap’s prefix in WireTap Prefs
+
+-- Date variables
+set current_date to (do shell script "date +%m-%d-%y")
+set the_file_name to the_radio_show_name & " " & current_date
+
+tell application "Music" -- Use "Music" for modern macOS, or "iTunes" for older systems
+    if (mute) then
+        set mute to false
+    end if
+    set volume 5
+    -- The following line attempts to play a specific playlist, ensure the playlist "Radio Programs" exists
+    set the_playlist to playlist "Radio Programs"
+    set shuffle of the_playlist to false
+    play track 1 of the_playlist
+end tell
+
+tell application "WireTap"
+    start recording
+end tell
+
+-- Calculate the total sleep time in seconds (hours * 3600 seconds/hour + padding)
+set total_sleep_seconds to ((the_radio_show_length * 3600) + the_padding)
+do shell script ("sleep " & total_sleep_seconds) -- Better than 'delay' for long durations
+
+tell application "WireTap"
+    stop recording
+    try
+        quit -- Quit WireTap after stopping the recording
+    end try
+end tell
+
+tell application "Music" to stop -- Stop playback in Music/iTunes
+
+tell application "Finder"
+    -- Original file name from WireTap
+    set source_file to (WireTaps_save_location & WireTaps_prefix & "001.aiff")
+    -- Rename the file to include the show name and date
+    set name of file source_file to (the_file_name & ".aiff")
+    -- Update the source file reference with the new name
+    set source_file to (WireTaps_save_location & the_file_name & ".aiff") as alias
+end tell
+
+tell application "Music"
+    -- Add the recorded .aiff file to the main library
+    set the_aiff_ref to add {source_file} to playlist main_library with timeout of (5 * hours) seconds
+    -- Convert the AIFF to your preferred format (set conversion prefs in Music/iTunes)
+    set the_converted_track_ref to convert the_aiff_ref
+    -- End timeout block
+    end timeout
+    
+    delete the_aiff_ref -- Remove the original AIFF reference from the library
+    
+    set the_track to (item 1 of the_converted_track_ref)
+    tell the_track
+        set name to the_file_name
+        set album to the_radio_show_name
+        set artist to ""
+        set genre to "Radio Show"
+        set comment to "Recorded on " & current_date
+        set year to ((do shell script "date +%Y") as integer)
+        set converted_location to location -- Get the file path of the newly converted track
+    end tell
+
+    -- Check if the target playlist exists, and create it if not
+    if (exists of playlist target_playlist) = false then
+        make new playlist with properties {name:target_playlist}
+    end if
+    
+    -- Add the final converted file to the target playlist
+    add {converted_location} to playlist target_playlist
+end tell
+
+-- Clean up the original .aiff file from the Finder/disk
+do shell script ("rm " & (quoted form of POSIX path of source_file))
+
+tell application "Finder"
+    activate
+    -- Select the final file in Finder
+    select file (converted_location as string)
+end tell
+
+return converted_location -- Return the path to the final file
