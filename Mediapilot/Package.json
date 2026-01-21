@@ -1,0 +1,7 @@
+{
+  "segments": [
+    { "type": "speech", "text": "Breaking news today…" },
+    { "type": "audio", "file": "jingle.wav" },
+    { "type": "silence", "duration": 1.5 }
+  ]
+}
