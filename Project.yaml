@@ -1,0 +1,29 @@
+project: daily-news
+
+inputs:
+  - type: docx
+    path: scripts/news.docx
+
+  - type: audio
+    path: audio/intro.m4a
+
+processing:
+  tts:
+    voice: en_female
+    speed: normal
+
+  order:
+    - intro
+    - script
+    - outro
+
+outputs:
+  podcast:
+    format: m4a
+    path: output/podcast/
+
+  screen:
+    player: vlc
+
+  radio:
+    device: default
