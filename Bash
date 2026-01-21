@@ -1,0 +1,2 @@
+audiotidy organize ./music --by artist album
+audiotidy rename *.m4a --format "{artist} - {title}" 
