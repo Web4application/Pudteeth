@@ -30,3 +30,9 @@ mediapilot/
 │   └── stream/
 ├── scheduler/
 └── api/
+
+vlc script.m4a --sub-file script.srt
+ install pydub (Audio Conversion)
+pip install gTTS (Text-to-Speech)
+pip install python-docx (Word documents)
+
