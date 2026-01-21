@@ -1,3 +1,4 @@
+curl https://api.github.com
 audiotidy organize ./music --by artist album
 audiotidy rename *.m4a --format "{artist} - {title}" 
 audiotidy dev ./audio --dry-run --json
