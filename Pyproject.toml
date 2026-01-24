@@ -1,0 +1,10 @@
+[project]
+name = "pudteeth"
+version = "0.1.0"
+description = "Media automation and AI speech orchestration engine"
+authors = [{ name = "Seriki Yakub (KUBU LEE)" }]
+readme = "README.md"
+requires-python = ">=3.9"
+
+[project.scripts]
+pudteeth = "pudteeth.main:main"
