@@ -1,0 +1,9 @@
+Audio/Text
+   ↓
+[STT] → Transcript
+   ↓
+[LLM] → Summary / Narration
+   ↓
+[TTS] → Voice Output
+   ↓
+[Mediapilot] → Playback / Stream / File
