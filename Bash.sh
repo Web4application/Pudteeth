@@ -1,4 +1,3 @@
-
 curl https://api.github.com
 audiotidy organize ./music --by artist album
 audiotidy rename *.m4a --format "{artist} - {title}" 
@@ -49,3 +48,33 @@ pip install python-docx (Word documents)
 pudteeth play intro.wav
 pudteeth subtitle input.srt
 pudteeth narrate article.txt
+
+```pudteeth
+pudteeth/
+├─ pudteeth/
+│  ├─ __init__.py
+│  ├─ main.py            # CLI entry
+│  ├─ mediapilot/
+│  │  ├─ __init__.py
+│  │  └─ orchestrator.py
+│  ├─ subtitle/
+│  │  ├─ __init__.py
+│  │  └─ parser.py
+│  ├─ system/
+│  │  ├─ __init__.py
+│  │  └─ adapter.py
+│  ├─ ai/
+│  │  ├─ __init__.py
+│  │  ├─ stt.py
+│  │  ├─ tts.py
+│  │  └─ llm.py
+│  └─ cli/
+│     ├─ play.py
+│     ├─ subtitle.py
+│     └─ narrate.py
+│
+├─ pyproject.toml
+├─ README.md
+├─ ROADMAP.md
+└─ LICENSE
+--
