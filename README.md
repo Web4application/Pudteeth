@@ -48,3 +48,34 @@ Early-stage but functional. Actively evolving toward a full AI media engine.
 
 ## Roadmap
 See ROADMAP.md
+
+--
+```bash
+pudteeth/
+├─ pudteeth/
+│  ├─ __init__.py
+│  ├─ main.py            # CLI entry
+│  ├─ mediapilot/
+│  │  ├─ __init__.py
+│  │  └─ orchestrator.py
+│  ├─ subtitle/
+│  │  ├─ __init__.py
+│  │  └─ parser.py
+│  ├─ system/
+│  │  ├─ __init__.py
+│  │  └─ adapter.py
+│  ├─ ai/
+│  │  ├─ __init__.py
+│  │  ├─ stt.py
+│  │  ├─ tts.py
+│  │  └─ llm.py
+│  └─ cli/
+│     ├─ play.py
+│     ├─ subtitle.py
+│     └─ narrate.py
+│
+├─ pyproject.toml
+├─ README.md
+├─ ROADMAP.md
+└─ LICENSE
+--
