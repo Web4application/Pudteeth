@@ -1,9 +1,12 @@
+
 curl https://api.github.com
 audiotidy organize ./music --by artist album
 audiotidy rename *.m4a --format "{artist} - {title}" 
 audiotidy dev ./audio --dry-run --json
 audiotidy dataset ./raw_audio
 audiotidy archive ./media --rules rules.yaml
+
+```pudteeth
 audiotidy/
 ├── core/          # metadata, safety, rules
 ├── modes/         # music, creator, dev, dataset
@@ -14,9 +17,15 @@ audiotidy/
 ├── tests/
 └── docs/
 
+pip install -e .
+pudteeth play intro.wav
+pudteeth subtitle file.srt
+pudteeth narrate article.txt
 mediapilot podcast script.md --voice female_en --music intro.mp3
 mediapilot news --source rss --interval 60min
 mediapilot video script.txt --format youtube 
+
+```pudteeth
 mediapilot/
 ├── ingest/        # scripts, audio, video, RSS
 ├── intelligence/  # ordering, timing, logic
