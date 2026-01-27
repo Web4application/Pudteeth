@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # Rename .m4a files using metadata (Artist - Title.m4a)
 # Requires: pip install mutagen
 
