@@ -78,3 +78,8 @@ pudteeth/
 ├─ ROADMAP.md
 └─ LICENSE
 --
+# Standard installation
+pip install speechmatics-voice
+
+# With SMART_TURN (ML-based turn detection)
+pip install speechmatics-voice[smart]
