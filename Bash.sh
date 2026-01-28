@@ -1,3 +1,5 @@
+https://github.com/Web4application/Pudteeth.git
+cd pudteeth
 curl https://api.github.com
 audiotidy organize ./music --by artist album
 audiotidy rename *.m4a --format "{artist} - {title}" 
