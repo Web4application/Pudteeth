@@ -1,3 +1,4 @@
+python MediapiLot/main.py --job Config/Jobs.yaml
 https://github.com/Web4application/Pudteeth.git
 cd pudteeth
 curl https://api.github.com
