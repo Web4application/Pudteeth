@@ -1,7 +1,11 @@
 ---
-pubteet: ![stream](https://copilot.microsoft.com/shares/podcasts/Ug6GWuA79oVtHLbxzKJaG.m4a)
+![pudteeth: stream.ogg](www.api.substack.com/feed/podcast/1/private/5a174370-ddfc-4a0c-b146-568f46eb6847.rss/(https://copilot.microsoft.com/shares/podcasts/Ug6GWuA79oVtHLbxzKJaG.rss
+)
 ---
 
+[radio public](https://api.substack.com/feed/podcast/1/private/5a174370-ddfc-4a0c-b146-568f46eb6847.rss) listen to live
+![pudteeth.m4a](https://api.substack.com/feed/podcast/1/private/5a174370-ddfc-4a0c-b146-568f46eb6847.rss
+)
 
 :atom:
 📻
@@ -48,8 +52,9 @@ Early-stage but functional. Actively evolving toward a full AI media engine.
 ## Roadmap
 See ROADMAP.md
 
---
-```bash
+
+```sh
+
 pudteeth/
 ├─ pudteeth/
 │  ├─ __init__.py
@@ -77,7 +82,12 @@ pudteeth/
 ├─ README.md
 ├─ ROADMAP.md
 └─ LICENSE
----
 ```
-// ##
-![stream](https://copilot.microsoft.com/shares/podcasts/Ug6GWuA79oVtHLbxzKJaG.m4a)
+
+
+[stream](https://copilot.microsoft.com/shares/podcasts/Ug6GWuA79oVtHLbxzKJaG.rss)
+
+```sh
+git clone https://github.com/Web4application/Pudteeth.git
+cd pudteeth
+
