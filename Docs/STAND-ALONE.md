@@ -66,7 +66,7 @@ No loose files. No chaos.
 
 ⸻
 
-⚙️ 2️⃣ :[BACKEND](FASTAPI AS THE BRAIN)
+⚙️ 2️⃣ [:BACKEND:](FASTAPI AS THE BRAIN)
 
 Your backend is the single source of truth.
 
@@ -93,7 +93,7 @@ app.include_router(ai.router, prefix="/ai")
 
 ⸻
 
-🎧 3️⃣ [INTERNAL DATA MODEL] (SIMPLE & STRONG)
+🎧 3️⃣ [:INTERNAL_DATA_MODEL:] (SIMPLE & STRONG)
 
 Podcast
 	•	id
@@ -137,7 +137,7 @@ Each is a '`route`. Each talks to `FastAPI`.
 
 ⸻
 
-🤖 5️⃣ :AI: [WORKFLOWS](pudteeth/ai/)
+🤖 5️⃣ [:AI_WORKFLOWS:](pudteeth/ai/)
 
 One-click :actions:
 	•	Transcribe episode
@@ -147,22 +147,21 @@ One-click :actions:
 	•	Create subtitles
 	•	Normalize audio
 
-:Behind_the_scenes:
+[Behind_the_scenes](pudteeth/mediapilot/)
+`Audio → STT → Transcript → LLM → Output`
 
-Audio → STT → Transcript → LLM → Output
-
-User sees buttons, not pipelines.
+>
+>User sees buttons, not pipelines.
 
 ⸻
 
-📡 6️⃣ :PUBLISHING: (BUILT-IN, NOT EXTERNAL)
+📡 6️⃣ [PUBLISHING](pudteeth.app/BUILT-IN_NOT_EXTERNAL/)
 
-Pudteeth generates:
+`Pudteeth generates:
 	•	rss.xml
 	•	episode metadata
-	•	enclosure URLs (local or hosted)
+	•	enclosure URLs (local or hosted)`
 
-Later:
 	•	Substack sync
 	•	Spotify submission
 	•	Private feeds
@@ -170,13 +169,13 @@ Later:
 But RSS first. Always.
 
 
-🔐 7️⃣ :LOCAL: FIRST PHILOSOPHY
+🔐 7️⃣ [LOCAL](pudteeth/docs/FIRST_PHILOSOPHY)
 
-This is important.
+`This is important.
 	•	Works offline
 	•	Files live on user machine
 	•	API keys owned by user
-	•	Optional cloud later
+	•	 cloud`
 
 
 🚀 8️⃣ # MVP YOU SHOULD BUILD FIRST (NO EXCUSES)
@@ -199,16 +198,13 @@ Dogfood it.
 
 ⸻
 
-🧠 STRAIGHT TRUTH
+🧠 :STRAIGHT_TRUTH:
+ 
+ `making “another podcast app”You’re making:
 
- making “another podcast app”.
-
-You’re making:
-
-A creator-controlled media operating system.
 
 That’s rare. That’s valuable.
-
+`
 ⸻
 
 NEXT — 
